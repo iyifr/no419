@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Mono } from 'next/font/google'
+import { Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
 import Favicon from './favicon.ico';
-import '@radix-ui/themes/styles.css';
 
 const inter = Inter({ subsets: ['latin'] })
-const mono = Space_Mono({ subsets: ['latin'], weight: ["400", "700"] })
+const mono = DM_Mono({ subsets: ['latin'], weight: ["300", "400", "500"] })
 
 export const metadata: Metadata = {
   title: 'no-419 | Call out scammers online',

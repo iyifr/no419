@@ -1,14 +1,17 @@
-import Image from 'next/image'
 import Button from './features/components/Button'
+import DialogComponent from './features/components/Dialog'
+import MyModal from './features/components/Modal'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 gap-12">
-      <p className='text-4xl text-white'>
-        Exposing scammy businesses & people online
-      </p>
+    <main className="mx-auto max-w-4xl flex items-center flex-col min-h-screen">
 
-      <Button>Who scammed you today ?</Button>
+      <div className='mt-24 flex flex-col gap-8'>
+        <p className='text-4xl text-white text-center'>
+          Stop getting swindled online!
+        </p>
+        <MyModal />
+      </div>
     </main>
   )
 }
