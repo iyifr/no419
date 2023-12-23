@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import Button from './Button'
 
-export default function MyModal() {
+export default function CreatePost() {
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -18,8 +18,8 @@ export default function MyModal() {
     return (
         <>
             <div className="flex items-center justify-center">
-                <Button onClick={openModal}>Who<span className='font-bold tracking-widest mx-2 text-red-500'>cheated</span>
-                    you today ?</Button>
+                <Button onClick={openModal}>Got<span className='font-bold tracking-widest mx-2 text-red-500'>scammed</span>
+                    today ?</Button>
             </div>
 
             <Transition appear show={isOpen} as={Fragment}>
@@ -50,7 +50,7 @@ export default function MyModal() {
                                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
                                         as="h3"
-                                        className="text-xl font-bold leading-6 text-gray-900"
+                                        className="lg:text-2xl text-xl font-bold leading-6 text-gray-900"
                                     >
                                         Call them out!
                                     </Dialog.Title>
@@ -67,7 +67,7 @@ export default function MyModal() {
                                             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                             onClick={closeModal}
                                         >
-                                            Got it, thanks!
+                                            Post
                                         </button>
                                     </div>
                                 </Dialog.Panel>
