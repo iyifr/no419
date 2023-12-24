@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
 import Favicon from './favicon.ico';
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 const mono = DM_Mono({ subsets: ['latin'], weight: ["300", "400", "500"] })
@@ -18,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${mono.className} bg-[#1e1e24] text-white`}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${mono.className} bg-[#1e1e24] text-white`}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
