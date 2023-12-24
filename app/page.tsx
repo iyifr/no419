@@ -8,11 +8,10 @@ export default function Home() {
 
       <div className='mt-20 flex flex-col gap-3'>
         <h1 className='text-4xl text-white text-center'>
-          Stop getting swindled g!
+          Stop getting swindled online!
         </h1>
-        <p className='text-center font-light mb-6'>Share scam stories & chase these fraudsters off the net.</p>
+        <p className='text-center font-light mb-6'>A site to expose scammy businesses & protect customer interests</p>
         <CreatePost />
-
         <UserPostsWidget />
       </div>
     </main>
