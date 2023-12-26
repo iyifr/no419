@@ -1,9 +1,11 @@
-import { SignInButton, UserButton } from '@clerk/nextjs'
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import UserPostsWidget from './features/UserPosts'
 import Button from './features/components/Button'
 import CreatePost from './features/components/Modal'
+import { currentUser } from '@clerk/nextjs'
 
-export default function Home() {
+export default async function Home() {
+  const user = await currentUser()
   return (
     <main className="mx-auto lg:max-w-4xl max-w-sm flex flex-col min-h-screen">
 
@@ -14,10 +16,17 @@ export default function Home() {
         <p className='text-center font-light mb-6'>A site to expose scammy businesses & protect customer interests</p>
         <CreatePost />
 
-        <SignInButton mode='modal'>
-          <Button>Sign in</Button>
-        </SignInButton>
-        <UserButton />
+        <SignedIn>
+          You're logged in as {user?.username}*
+        </SignedIn>
+
+        <SignedOut>
+          <SignInButton mode='modal'>
+            <Button>Got<span className='font-bold tracking-widest mx-2 text-red-500'>scammed</span>
+              today ?</Button>
+          </SignInButton>
+        </SignedOut>
+
         <UserPostsWidget />
       </div>
     </main>
